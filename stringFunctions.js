@@ -39,4 +39,23 @@ function makeMagicHappen(){
   document.getElementById("magic").value = result;
 }
 
+function nextInLine(arr, item) {
+  console.log("arr is: "+arr + " item is " +item);
+  arr.push(item);
+  console.log("queue is: "+arr);
+  var firstItem = arr.shift(arr);
+  console.log("queue is: "+firstItem);
+  return firstItem;
+}
+
+function checkNextInLine(){
+  var ary = document.getElementById("ary1").value;
+  var item = document.getElementById("item").value;
+  console.log("values of ary = " + ary + " and item = " + item);
+  var result = nextInLine(ary, item);
+  console.log("returned result is " + result);
+
+  document.getElementById("returnedAry").value =result;
+}
+
 // document.getElementById("testButton").onclick = helloWorld();
