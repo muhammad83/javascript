@@ -41,9 +41,12 @@ function makeMagicHappen(){
 
 function nextInLine(arr, item) {
   console.log("arr is: "+arr + " item is " +item);
-  arr.push(item);
+  var arr2 = [];
+  console.log("arr2 is: "+arr2 + " arr " +arr);
+  arr2 = arr;
+  arr2.push(item);
   console.log("queue is: "+arr);
-  var firstItem = arr.shift(arr);
+  var firstItem = arr2.shift(arr);
   console.log("queue is: "+firstItem);
   return firstItem;
 }
@@ -58,4 +61,17 @@ function checkNextInLine(){
   document.getElementById("returnedAry").value =result;
 }
 
-// document.getElementById("testButton").onclick = helloWorld();
+function testLogicalOr(val) {
+  console.log("value of val is " + val)
+  if(val < 10 || val > 20){
+    return "Outside";
+  }
+  return "Inside";
+}
+
+function testLogicFunction(){
+  var numToCompare = document.getElementById("numToCompare").value;
+  var result = testLogicalOr(numToCompare);
+
+  document.getElementById("comparisonResult").value = result;
+}
