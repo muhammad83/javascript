@@ -76,7 +76,6 @@ function testLogicFunction(){
   document.getElementById("comparisonResult").value = result;
 }
 
-
 function golfScore(par, strokes) {
   if (strokes === 1)
     return "Hole-in-one!";
@@ -98,4 +97,19 @@ function golfScore(par, strokes) {
   
   else if (strokes >= par + 3)
     return "Go Home!";
+
+  else
+    return "really, after that performace you want to know your ranking!!!"
+
+}
+
+function checkGolfShot(){
+  var strokes = document.getElementById("strokes").value;
+  var par = document.getElementById("par").value;
+
+  var result = golfScore(par, strokes);
+
+  console.log("strokes = " + strokes + "par = " + par + " ranking = " + result);
+
+  document.getElementById("yourRanking").value = result;
 }
