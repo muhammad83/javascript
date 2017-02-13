@@ -113,3 +113,24 @@ function checkGolfShot(){
 
   document.getElementById("yourRanking").value = result;
 }
+
+function phoneticLookup(val) {
+  var result = {
+     "alpha":"Adams",
+     "bravo":"Boston",
+     "charlie":"Chicago",
+     "delta":"Denver",
+     "echo":"Easy",
+     "foxtrot":"Frank"
+  };
+  return result;
+}
+
+function doLookup(){
+  var valueToLookUp = document.getElementById("valueToLookUp").value;
+  var result = phoneticLookup(valueToLookUp);
+
+  console.log("the result of the lookup was "+ result);
+
+  document.getElementById("result").value = result;
+}
