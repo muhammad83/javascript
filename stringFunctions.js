@@ -123,7 +123,7 @@ function phoneticLookup(val) {
      "echo":"Easy",
      "foxtrot":"Frank"
   };
-  return result;
+  return result[val];
 }
 
 function doLookup(){
@@ -131,6 +131,7 @@ function doLookup(){
   var result = phoneticLookup(valueToLookUp);
 
   console.log("the result of the lookup was "+ result);
+  console.log("the value of lookup value was "+ valueToLookUp);
 
   document.getElementById("result").value = result;
 }
