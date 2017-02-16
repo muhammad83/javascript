@@ -135,3 +135,91 @@ function doLookup(){
 
   document.getElementById("result").value = result;
 }
+
+function multiplyAll(arr) {
+  var product = 1;
+  for(var i = 0; i < arr.length; i++){
+    for(var j = 0; j < arr[i].length; j++){
+        console.log("length of arrays are arr " + arr.length);
+        console.log("length of arrays are arr[i] " + arr[i].length);
+        console.log("length of arrays are arr[i][j]" + arr[i][j].length);
+        console.log("the outmost array has "+arr[i]);
+        console.log("the first child array has "+arr[j]);
+        console.log(arr[i][j]);
+        console.log("array being multiplied is " + arr[i] +"*"+ arr[i][j] + " and the product is " + product);
+      product *= arr[i][j];
+      
+    }
+  }
+  return product;
+}
+
+//Setup
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+];
+
+
+function lookUpProfile(firstName, prop){
+    console.log("contacts length" + contacts.length);
+  console.log("test if contacts is visible = " + contacts[1]["firstName"]);
+  console.log("first name passed to the function is "+ firstName);
+  console.log("prop passed to the function is "+ prop);
+
+  var result ="";
+
+  for(var i = 0; i < contacts.length; i++){
+    console.log("inside for loop " + contacts[i]["firstName"]);
+
+    if(contacts[i]["firstName"] == firstName) {
+      if(contacts[i].hasOwnProperty(prop)){
+      return contacts[i][prop] + contacts[i]["firstName"];
+      }
+      else{
+        return "No such property";
+      }
+    }
+    else{
+      result = "No such contact";
+    }
+  }
+  return result;
+}
+function doMultiply() {
+
+  // var string = parseInt(document.getElementById("multidemarray").value);
+
+  // var array =  [[1,2],[3,4],[5,6,7]];
+
+  var array = document.getElementById("multidemarray").value;
+
+  console.log("array passed is: " + array);
+
+  var result =  lookUpProfile("Akira", "address");
+
+  console.log("result returned is: " + result);
+  document.getElementById("multiplyResult").value = result;
+}
