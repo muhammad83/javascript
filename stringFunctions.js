@@ -223,20 +223,3 @@ function doMultiply() {
   console.log("result returned is: " + result);
   document.getElementById("multiplyResult").value = result;
 }
-
-function reverseString(str) {
-  var array = str.split('');
-  var result = array.reverse().join('');
-  console.log("the array " + result);
-
-  return result;
-}
-
-function doReverse(){
-  var word = document.getElementById("wordToReverse").value;
-  var result = reverseString(word);
-
-  document.getElementById("rerversedWord").value = result;
-}
-
-// reverseString("hello");

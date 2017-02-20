@@ -46,18 +46,17 @@
           <p><button class="btn btn-sm btn-block" onclick="doReverse();">Reverse</button></p>
           <p><textarea id="rerversedWord" class="form-control mr-sm-2" rows="3" placeholder="the reversed word is"></textarea></p>
 
-          <h4>Logical Or Operator</h4>
-          <p><input id="numToCompare" class="form-control mr-sm-2" type="text" placeholder="Enter number to compare"></p>
-          <p><button class="btn btn-sm btn-block" onclick="testLogicFunction();">Compare the number</button></p>
-          <p><textarea id="comparisonResult" class="form-control mr-sm-2" rows="3" placeholder="the comparison result is"></textarea></p>
+          <h4>Factorial</h4>
+          <p><input id="factorialOf" class="form-control mr-sm-2" type="text" placeholder="Enter number for factorial"></p>
+          <p><button class="btn btn-sm btn-block" onclick="doFactorial();">Generate Factorial</button></p>
+          <p><textarea id="factorialIs" class="form-control mr-sm-2" rows="3" placeholder="the factorial is: "></textarea></p>
         </div>
 
         <div class="col-lg-6">
-          <h4>Queues in JavaScript</h4>
-          <p><input id="ary1" class="form-control mr-sm-2" type="text" placeholder="Enter the first array e.g. [1,2,3,4,5]"/></p>
-          <p><input id="item" class="form-control mr-sm-2" type="text" placeholder="Enter next item"/></p>
-          <p><button class="btn btn-sm btn-block" onclick="checkNextInLine();">Last item in the array is</button></p>
-          <p><textarea id="returnedAry" class="form-control mr-sm-2" rows="3" placeholder="the last item in the array is (press the button which says the same :P)"></textarea></p>
+          <h4>Palindromes</h4>
+          <p><input id="palindrome" class="form-control mr-sm-2" type="text" placeholder="Enter a word to check if its a Palindromes"/></p>
+          <p><button class="btn btn-sm btn-block" onclick="checkPalindrome();">Check if its a Palindromes</button></p>
+          <p><textarea id="returnedAry" class="form-control mr-sm-2" rows="3" placeholder="And the word is a Palindrome (true or false)"></textarea></p>
 
           <h4>Birdie Par</h4>
           <p><input id="strokes" class="form-control mr-sm-2" type="text" placeholder="How many strokes?"/></p>
@@ -83,5 +82,6 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- My own javascript file for string manpulations -->
     <script src="stringFunctions.js"></script>
+    <script src="basicAlgo.js"></script>
   </body>
 </html>
