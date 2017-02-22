@@ -106,3 +106,40 @@ function sorter(){
 
   document.getElementById("sortedArray").value = result;
 }
+
+function confirmEnding(str, target) {
+  var lastChar = str.substr(str.length - 1);
+  var sentence = "";
+
+  if (str.includes(" ")){
+    sentence = str.split(" ");
+    if(sentence[sentence.length-1].includes(target.toLowerCase())){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  console.log("sentence " + sentence);
+  var bool = false;
+
+  if(lastChar.toLowerCase() == target.toLowerCase()){
+    // return true;
+    bool = true;
+  }
+  else{
+    // return false;
+    bool = false
+  }
+
+  console.log("lastChar = " + lastChar + " target is = " + target + " result is " + bool);
+  return bool;
+}
+
+function confirmEndingRunner(){
+  var str = document.getElementById("word").value;
+  var target = document.getElementById("letter").value;
+  var result = confirmEnding(str, target);
+
+  document.getElementById("wordLetterMatch").value = result;
+}
