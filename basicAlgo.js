@@ -143,3 +143,27 @@ function confirmEndingRunner(){
 
   document.getElementById("wordLetterMatch").value = result;
 }
+
+function truncateString(str, num) {
+  str += "..."
+  console.log("str after 3 dots " + str);
+
+  var length = str.length;
+  console.log("length of the string passed in: " + length);
+  var retStr = str.slice(0, num-3);
+  
+  if(((length)-num) > 3 && length != num){
+    retStr += "...";
+  }
+
+  return retStr;
+}
+
+function truncationRunner(){
+  var str = document.getElementById("stringToTruncate").value;
+  var num = document.getElementById("numberToTruncate").value;
+
+  var result = truncateString(str, num);
+
+  document.getElementById("truncatedString").value = result;
+}

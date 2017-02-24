@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
     <title>JavaScript practicing page</title>
     <!-- Bootstrap core CSS -->
@@ -56,6 +55,12 @@
           <p><button class="btn btn-sm btn-block" onclick="sorter();">click to sort</button></p>
           <p><textarea id="sortedArray" class="form-control mr-sm-2" rows="3" placeholder="sorted array is"></textarea></p>
 
+          <h4>Truncate string</h4>
+          <p><input id="stringToTruncate" class="form-control mr-sm-2" type="text" placeholder="Enter a string you want to truncate"/></p>
+          <p><input id="numberToTruncate" class="form-control mr-sm-2" type="text" placeholder="Enter a number to truncate"/></p>
+          <p><button class="btn btn-sm btn-block" onclick="truncationRunner();">click to truncate</button></p>
+          <p><textarea id="truncatedString" class="form-control mr-sm-2" rows="3" placeholder="Truncate string is"></textarea></p>
+
         </div>
 
         <div class="col-lg-6">
@@ -89,8 +94,6 @@
        <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
     <!-- My own javascript file for string manpulations -->
     <script src="stringFunctions.js"></script>
     <script src="basicAlgo.js"></script>
