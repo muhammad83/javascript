@@ -145,18 +145,14 @@ function confirmEndingRunner(){
 }
 
 function truncateString(str, num) {
-  str += "..."
-  console.log("str after 3 dots " + str);
 
-  var length = str.length;
-  console.log("length of the string passed in: " + length);
-  var retStr = str.slice(0, num-3);
-  
-  if(((length)-num) > 3 && length != num){
-    retStr += "...";
+  if(num > 3){
+    num -= 3;
+    str.slice(0, num);
   }
-
-  return retStr;
+  else {
+    str;
+  }
 }
 
 function truncationRunner(){
@@ -164,6 +160,14 @@ function truncationRunner(){
   var num = document.getElementById("numberToTruncate").value;
 
   var result = truncateString(str, num);
+
+  truncateString("Absolutely Longer", 2);
+  truncateString("A-", 1);
+  truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2);
+  truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length);
+  truncateString("Peter Piper picked a peck of pickled peppers", 14);
+  truncateString("A-tisket a-tasket A green and yellow basket", 11);
+
 
   document.getElementById("truncatedString").value = result;
 }
