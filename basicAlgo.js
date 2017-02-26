@@ -174,12 +174,16 @@ function truncationRunner(){
 
 function chunkArrayInGroups(arr, size) {
   var length = arr.length;
-  var ret = [];
-  console.log("length of array = " + length);
-  console.log("division = " + length / size);
-  for(var i = 0; i < length; i++){
+  var size2 = Math.ceil(length /size);
+  var ret = [size2];
+  // var i = 0;
+  // console.log("length of array = " + length);
+  // console.log("division = " + length / size);
+  for(var i = 0; i < size2; i++){
     for(var j = 0; j < length; j += size){
-      ret[i][j].push(arr.slice(j, size+j));
+      // ret = new Array(size);
+      ret.push([arr.slice(j, size+j)]);
+      // i++;
     }
   }
   console.log("return array = " + ret);
