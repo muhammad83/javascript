@@ -171,3 +171,27 @@ function truncationRunner(){
 
   document.getElementById("truncatedString").value = result;
 }
+
+function chunkArrayInGroups(arr, size) {
+  var length = arr.length;
+  var ret = [];
+  console.log("length of array = " + length);
+  console.log("division = " + length / size);
+  for(var i = 0; i < length; i++){
+    for(var j = 0; j < length; j += size){
+      ret[i][j].push(arr.slice(j, size+j));
+    }
+  }
+  console.log("return array = " + ret);
+  return ret;
+}
+
+function chunkArrayInGroupsRunner(){
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4);
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+}
