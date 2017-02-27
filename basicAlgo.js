@@ -174,20 +174,31 @@ function truncationRunner(){
 
 function chunkArrayInGroups(arr, size) {
   var length = arr.length;
-  var size2 = Math.ceil(length /size);
-  var ret = [size2];
-  // var i = 0;
-  // console.log("length of array = " + length);
-  // console.log("division = " + length / size);
-  for(var i = 0; i < size2; i++){
-    for(var j = 0; j < length; j += size){
-      // ret = new Array(size);
-      ret.push([arr.slice(j, size+j)]);
-      // i++;
-    }
+  var ret = []
+
+  for(var j = 0; j < length; j += size){
+    ret.push([arr.slice(j, size+j)]);
   }
   console.log("return array = " + ret);
   return ret;
+
+  // var temp = [];
+  // var result = [];
+
+  // for (var a = 0; a < arr.length; a++) {
+  //   if (a % size !== size - 1)
+  //     temp.push(arr[a]);
+  //   else {
+  //     temp.push(arr[a]);
+  //     result.push(temp);
+  //     temp = [];
+  //   }
+  // }
+
+  // if (temp.length !== 0)
+  //   result.push(temp);
+  //   console.log("return array = " + result);
+  // return result;
 }
 
 function chunkArrayInGroupsRunner(){
@@ -198,4 +209,9 @@ chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4);
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+}
+
+function slasher(arr, howMany) {
+  
+  return arr.slice(howMany, arr.length);
 }
