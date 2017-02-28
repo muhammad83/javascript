@@ -215,3 +215,42 @@ function slasher(arr, howMany) {
   
   return arr.slice(howMany, arr.length);
 }
+
+function mutation(arr) {
+  var ret = [];
+   
+  for(var i = 0; i < arr[1].length; i++){
+    console.log("comparing "+ arr[0].toLowerCase() + " and " + arr[1][i].toLowerCase());
+    console.log("comparison result is "+ arr[0].toLowerCase().includes(arr[1][i].toLowerCase()));
+    if(arr[0].toLowerCase().includes(arr[1][i].toLowerCase())){
+      ret.push(true);
+    }
+    else{
+      ret.push(false);
+    }
+  }
+  
+  console.log(arr[1].toLowerCase());
+  console.log(arr[0].toLowerCase());
+
+  console.log("result " + ret);
+  // console.log("mutation result = " + arr[1].toLowerCase().includes(arr[0].toLowerCase()));
+
+  if(ret.includes(false)){
+    return false;
+  }
+  else
+    return true
+}
+
+function mutationRunner(){
+  mutation(["hello", "hey"]);
+  mutation(["hello", "Hello"]);
+  mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]);
+  mutation(["Mary", "Army"]);
+  mutation(["Mary", "Aarmy"]); 
+  mutation(["Alien", "line"]);
+  mutation(["floor", "for"]);
+  mutation(["hello", "neo"]); 
+  mutation(["voodoo", "no"]);
+}
