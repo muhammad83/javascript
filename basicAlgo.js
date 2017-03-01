@@ -230,8 +230,8 @@ function mutation(arr) {
     }
   }
   
-  console.log(arr[1].toLowerCase());
-  console.log(arr[0].toLowerCase());
+console.log(arr[1].toLowerCase());
+console.log(arr[0].toLowerCase());
 
   console.log("result " + ret);
   // console.log("mutation result = " + arr[1].toLowerCase().includes(arr[0].toLowerCase()));
@@ -253,4 +253,22 @@ function mutationRunner(){
   mutation(["floor", "for"]);
   mutation(["hello", "neo"]); 
   mutation(["voodoo", "no"]);
+}
+
+function bouncer(arr) {
+  var filtered = arr.filter(isNullValue);
+  console.log("values filtered " + filtered);
+  return filtered;
+}
+
+function isNullValue(value){
+  return (isNaN(value)? value : value);
+}
+
+function bouncerRunner(){
+  bouncer([7, "ate", "", false, 9]);
+  bouncer(["a", "b", "c"]);
+  bouncer([false, null, 0, NaN, undefined, ""]);
+  bouncer([1, null, NaN, 2, undefined]);
+  
 }
