@@ -269,6 +269,35 @@ function bouncerRunner(){
   bouncer([7, "ate", "", false, 9]);
   bouncer(["a", "b", "c"]);
   bouncer([false, null, 0, NaN, undefined, ""]);
-  bouncer([1, null, NaN, 2, undefined]);
+  bouncer([1, null, NaN, 2, undefined]); 
+}
+
+
+function destroyer(arr) {
+  var i = arr;
+  console.log(i);
+  console.log(arr);
+
+var args = Array.prototype.slice.call(arguments, 1);
+
+console.log(args);
+
+  for(var j in arr){
+    console.log(arr[j]);
+  }
+  // for(var i; i < arr.length)
   
+  return arr;
+}
+
+function valueFilter(value, valueToFilterArray){
+  return value != valueToFilterArray;
+}
+
+function destroyerRunner(){
+  destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
+destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
+destroyer([3, 5, 1, 2, 2], 2, 3, 5)
+destroyer([2, 3, 2, 3], 2, 3)
+destroyer(["tree", "hamburger", 53], "tree", 53)
 }
