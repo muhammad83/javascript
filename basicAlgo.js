@@ -274,19 +274,24 @@ function bouncerRunner(){
 
 
 function destroyer(arr) {
-  var i = arr;
-  console.log(i);
-  console.log(arr);
-
-var args = Array.prototype.slice.call(arguments, 1);
-
-console.log(args);
-
-  for(var j in arr){
-    console.log(arr[j]);
+  var args = Array.prototype.slice.call(arguments, 1);
+  var newArr = []
+  for(var i in arr){
+    for(var j in args){
+      // console.log("passed arry being compared ",arr[i], " element being compared ", args[j]);
+      if(arr[i]!=args[j]){
+        // var index = arr.indexOf(arr[i]);
+        // console.log("index is ", index);
+        // if(index != -1){
+        // newArr = arr.splice(index, 1);
+        newArr.push(arr[i]);
+        // }
+      // return 
+        
+      }
+    }
   }
-  // for(var i; i < arr.length)
-  
+  console.log("array now is ", newArr);
   return arr;
 }
 
@@ -296,8 +301,8 @@ function valueFilter(value, valueToFilterArray){
 
 function destroyerRunner(){
   destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
-destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
-destroyer([3, 5, 1, 2, 2], 2, 3, 5)
-destroyer([2, 3, 2, 3], 2, 3)
-destroyer(["tree", "hamburger", 53], "tree", 53)
+  destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
+  destroyer([3, 5, 1, 2, 2], 2, 3, 5)
+  destroyer([2, 3, 2, 3], 2, 3)
+  destroyer(["tree", "hamburger", 53], "tree", 53)
 }
