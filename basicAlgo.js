@@ -275,45 +275,14 @@ function bouncerRunner(){
 
 function destroyer(arr) {
   var args = Array.prototype.slice.call(arguments, 1);
-  var length1 = arr.length;
-  var length2 = args.length;
-
-  var temp = arr;
-
-  console.log("arr ", arr, " arguments ", args);
-  
-  for(var i = 0; i < length1; i++){
-    for(var j = 0; j < length2; j++){
-
-      console.log("i = ", i , " j = ", j);
-      console.log("arr element ",temp[i], " arg element ", args[j]);
-      // console.log("arr.length = ", arr.length);
-      // console.log("args.length = ", args.length);
-
-      if(temp[i]!=args[j]){
-        var index = temp.indexOf(temp[i]);
-        console.log("index = ", index);
-        // console.log("index is ", index);
-        // if(index != -1){
-        arr = temp.splice(index, 1);
-        console.log(" arr now is ", arr);
-        // newArr.push(arr[i]);
-        // }
-      // return 
-        
-      }
-    }
-  }
-  console.log("array now is ", arr);
-  return arr;
-}
-
-function valueFilter(value, valueToFilterArray){
-  return value != valueToFilterArray;
+  return arr.filter(function(element) {
+    console.log("result = ", args.indexOf(element) === -1, "args.indexOf(element) ", args.indexOf(element));
+    return args.indexOf(element) === -1;
+  });
 }
 
 function destroyerRunner(){
-  destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
+  document.getElementById("destroyerTextArea").value = destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
   // destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
   // destroyer([3, 5, 1, 2, 2], 2, 3, 5)
   // destroyer([2, 3, 2, 3], 2, 3)
