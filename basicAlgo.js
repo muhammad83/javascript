@@ -283,8 +283,68 @@ function destroyer(arr) {
 
 function destroyerRunner(){
   document.getElementById("destroyerTextArea").value = destroyer([1, 2, 3, 1, 2, 3], 2, 3) 
-  // destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
-  // destroyer([3, 5, 1, 2, 2], 2, 3, 5)
-  // destroyer([2, 3, 2, 3], 2, 3)
-  // destroyer(["tree", "hamburger", 53], "tree", 53)
+  destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3)
+  destroyer([3, 5, 1, 2, 2], 2, 3, 5)
+  destroyer([2, 3, 2, 3], 2, 3)
+  destroyer(["tree", "hamburger", 53], "tree", 53)
+}
+
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  return arr.sort(function(a,b){
+    return a > b;
+  });
+}
+
+function arraySorterRunner(){
+  getIndexToIns([10, 20, 30, 40, 50], 35);
+  getIndexToIns([10, 20, 30, 40, 50], 30);
+  getIndexToIns([40, 60], 50);
+  getIndexToIns([3, 10, 5], 3);
+  getIndexToIns([5, 3, 20, 3], 5);
+  getIndexToIns([2, 20, 10], 19);
+  getIndexToIns([2, 5, 10], 15);
+}
+
+function rot13(str) {
+  var test = String.fromCharCode(65);
+  var test2 = str.charCodeAt(0);
+  var str2 = "AZ";
+  console.log(str2.charCodeAt(0), " ", str2.charCodeAt(1));
+  var test3 = String.fromCharCode(test2-13);
+  console.log(test2, "fromCharCode ", test, " converted back letter is ", test3);
+  console.log(str);
+
+  var array = Array.from(str);
+
+  console.log("array = ", array);
+  var retArr =[];
+  var test4 = array.filter(function(letter){
+    var con = str.charCodeAt(str.indexOf(letter))-13;
+    if (con >= 65 && con <= 90){
+      console.log("test this ", String.fromCharCode(con));
+      retArr.push(String.fromCharCode(str.charCodeAt(str.indexOf(letter))-13));
+    }
+    else{
+      console.log("test this ", String.fromCharCode(str.charCodeAt(str.indexOf(letter))+13));
+      retArr.push(String.fromCharCode(str.charCodeAt(str.indexOf(letter))+13));
+    }
+
+    return retArr;
+  });
+
+  console.log("test 4 ", test4);
+  console.log("return array ", retArr);
+
+  var retstr = retArr.join("");
+
+  console.log("decoded str ", retstr);
+  return str;
+}
+
+function rot13Runner(){
+  rot13("SERR PBQR PNZC");
+  // rot13("SERR CVMMN!");
+  // rot13("SERR YBIR?");
+  // rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
 }
