@@ -307,44 +307,28 @@ function arraySorterRunner(){
 }
 
 function rot13(str) {
-  var test = String.fromCharCode(65);
-  var test2 = str.charCodeAt(0);
-  var str2 = "AZ";
-  console.log(str2.charCodeAt(0), " ", str2.charCodeAt(1));
-  var test3 = String.fromCharCode(test2-13);
-  console.log(test2, "fromCharCode ", test, " converted back letter is ", test3);
-  console.log(str);
 
-  var array = Array.from(str);
-
-  console.log("array = ", array);
-  var retArr =[];
-  var test4 = array.filter(function(letter){
+  return Array.from(str).map(function(letter){
     var con = str.charCodeAt(str.indexOf(letter))-13;
     if (con >= 65 && con <= 90){
-      console.log("test this ", String.fromCharCode(con));
-      retArr.push(String.fromCharCode(str.charCodeAt(str.indexOf(letter))-13));
+        return String.fromCharCode(str.charCodeAt(str.indexOf(letter))-13)
+    }
+    else if(!letter.match(/[^A-Z0-9]/)){
+        return String.fromCharCode(str.charCodeAt(str.indexOf(letter))+13)
     }
     else{
-      console.log("test this ", String.fromCharCode(str.charCodeAt(str.indexOf(letter))+13));
-      retArr.push(String.fromCharCode(str.charCodeAt(str.indexOf(letter))+13));
+        return letter;
     }
+  }).join("");
 
-    return retArr;
-  });
-
-  console.log("test 4 ", test4);
-  console.log("return array ", retArr);
-
-  var retstr = retArr.join("");
-
-  console.log("decoded str ", retstr);
+console.log("decoded str ", arr);
+  // console.log("decoded str ", retstr);
   return str;
 }
 
 function rot13Runner(){
   rot13("SERR PBQR PNZC");
-  // rot13("SERR CVMMN!");
-  // rot13("SERR YBIR?");
-  // rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
+  rot13("SERR CVMMN!");
+  rot13("SERR YBIR?");
+  rot13("GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.");
 }
